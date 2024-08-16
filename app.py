@@ -13,7 +13,8 @@ def inference_and_display_result(text):
     # Display the classification result
     st.markdown('**Classification Result**')
     st.write(f'Input: {text}')
-    st.write(f'Prediction: {clf_prediction}')
+    # Map "ham" and "spam" to "Not Spam" and "Spam"
+    st.write(f'Predict: {clf_prediction} :skull_and_crossbones:') if clf_prediction == 'Spam' else st.write(f'Predict: {clf_prediction} :exploding_head:')
 
 # Main function to set up the Streamlit app
 def main():
